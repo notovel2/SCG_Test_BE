@@ -5,6 +5,7 @@ exports.replyMessage = async (replyToken) => {
     let results = await findPlaces()
     if (results.length > 0) {
         let result = results[0]
-        reply(`${result.name} ${result.vicinity}`, replyToken)
+        reply(`${result.name} 
+        ${result.vicinity}`, replyToken)
     }
 }
