@@ -4,7 +4,7 @@ const {findPlaces} = require('../services/google-service')
 exports.replyMessage = async (replyToken) => {
     let results = await findPlaces()
     if (results.length > 0) {
-        let result = results[0]
-        reply(`${result.name}\n${result.vicinity}`, replyToken)
+        let message = results.map(result => `${result.name} : ${result.vicinity}`).join('\n')
+        reply(message, replyToken)
     }
 }
