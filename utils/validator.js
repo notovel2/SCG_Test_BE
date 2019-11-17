@@ -1,3 +1,3 @@
-const isNullOrUndefined = (data) => data != null && data != undefined
+const isNullOrUndefined = (data) => data == null || data == undefined
 
 exports.isNullOrUndefined = isNullOrUndefined
