@@ -1,7 +1,16 @@
+const {cache} = require('../shared/cache')
+const {isNullOrUndefined} = require('../utils/validator')
 const MATCH_ARRAY = ['x', 'y', 'z']
 
 exports.findXYZ = (body) => {
     let array = body.input
+    let key = array.join(',')
+    let value = cache.get(key)
+    if (!isNullOrUndefined(value)) {
+        console.log('cache');
+        return value
+    }
+
     let result = {}
     let tmpMatchArray = MATCH_ARRAY
     
@@ -18,6 +27,7 @@ exports.findXYZ = (body) => {
                     tmpMatchArray.splice(matchIndex, 1)
                 }
             })
+            cache.set(key, result)
         }
     } catch (error) {
         console.log(error);
