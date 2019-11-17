@@ -1,5 +1,3 @@
-import Axios from 'axios'
-
 const axios = require('axios')
 const {lineConfig} = require('../config')
 
@@ -17,7 +15,7 @@ export const reply = (message, replyToken) => {
             }
         ]
     })
-    let instance = Axios.create({
+    let instance = axios.create({
         headers: headers
     })
     instance.post(lineConfig.url, body)
