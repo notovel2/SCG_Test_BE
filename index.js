@@ -11,7 +11,7 @@ const {middleware} = require('@line/bot-sdk')
 app.use(cors({
     origin: origin
 }))
-app.use(middleware(lineConfig))
+// app.use(middleware(lineConfig))
 app.use(express.json())
 app.use('/SCG', scgRouter)
 app.use('/places', placesGoogleSearchRouter)
