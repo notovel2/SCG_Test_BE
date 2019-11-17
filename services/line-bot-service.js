@@ -1,7 +1,7 @@
 const axios = require('axios')
 const {lineConfig} = require('../config')
 
-exports.reply = (message, replyToken) => {
+exports.reply = async (message, replyToken) => {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${lineConfig.channelAccessToken}`

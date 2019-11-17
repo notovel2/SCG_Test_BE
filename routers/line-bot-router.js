@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {reply} = require('../controllers/line-bot')
+const {replyMessage} = require('../controllers/line-bot-controller')
 
 router.get('/', (req, res) => {
     res.send('GET')
@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     let events = req.body.events
-    reply('Received', events[0].replyToken)
+    replyMessage(events[0].replyToken)
     res.json({})
 })
 
