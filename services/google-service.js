@@ -20,6 +20,8 @@ exports.findPlaces = async () => {
     }
     let response = await axios.default.get(url)
     let results = response.data.results
+    console.log('set cache with', results);
+    
     cache.set(key, results)
     return results
 }
