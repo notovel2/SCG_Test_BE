@@ -15,7 +15,7 @@ exports.findPlaces = async () => {
     let url = getUrl(BANGSUE_LOCATION.lat,BANGSUE_LOCATION.lon)
     let value = cache.get(key)
     if (!isNullOrUndefined(value)) {
-        console.log('cache');
+        console.log('cache', value);
         return value
     }
     let response = await axios.default.get(url)
