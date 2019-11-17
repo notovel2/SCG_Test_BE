@@ -1,7 +1,7 @@
 const axios = require('axios')
 const {lineConfig} = require('../config')
 
-export const reply = (message, replyToken) => {
+exports.reply = (message, replyToken) => {
     let headers = {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${lineConfig.channelAccessToken}`
@@ -11,7 +11,7 @@ export const reply = (message, replyToken) => {
         messages: [
             {
                 type: 'text',
-                text: 'Hello'
+                text: message
             }
         ]
     })
