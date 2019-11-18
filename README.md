@@ -9,4 +9,4 @@ https://scg-test-be.herokuapp.com/
 # SCG Restaurants Bot (Line bot)
 
 please add bot with id @760ijheh
-You can type any text to view restaurant near Bangsue
+You can type any text to random restaurant near bangsue
