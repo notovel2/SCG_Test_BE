@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {replyMessage} = require('../controllers/line-bot-controller')
+const {randomRestaurant: replyMessage} = require('../controllers/line-bot-controller')
 
 router.get('/', (req, res) => {
     res.send('GET')
